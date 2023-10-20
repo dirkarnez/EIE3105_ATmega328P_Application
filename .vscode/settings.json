@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "io.h": "c",
+        "iom128rfr2.h": "c",
+        "xmega.h": "c",
+        "version.h": "c",
+        "common.h": "c",
+        "fuse.h": "c"
+    }
+}

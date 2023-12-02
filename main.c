@@ -1,9 +1,8 @@
-/*
- * EIE3105_Lab2_A_2.c
- *
- * Created: 2018-09-21 3:02:30 PM
- * Author : Bao
- */ 
+#include <math.h>
+#define F_CPU 16000000UL
+
+#define USART_BAUDRATE 9600
+#define UBRR_VALUE (ceil((((F_CPU/(USART_BAUDRATE * 16UL)))-1)))
 
 #include <avr/io.h>
 

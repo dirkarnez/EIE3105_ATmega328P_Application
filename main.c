@@ -1,8 +1,7 @@
-#include <math.h>
 #define F_CPU 16000000UL
-
 #define USART_BAUDRATE 9600
-#define UBRR_VALUE ((int)(ceil((((F_CPU) / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL)))))
+
+#define UBRR_VALUE ((int)(((F_CPU / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL))))
 
 
 #include <avr/io.h>

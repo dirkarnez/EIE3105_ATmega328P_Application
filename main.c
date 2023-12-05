@@ -1,7 +1,5 @@
 #define F_CPU 16000000UL
-#define USART_BAUDRATE 9600
-
-#define UBRR_VALUE ((int)(((F_CPU / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL))))
+#define UBRR_VALUE(USART_BAUDRATE) ((int)(((F_CPU / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL))))
 
 #ifdef __AVR_ATmega328P__
 #include <avr/io.h>
@@ -34,7 +32,11 @@ void Timer_1_Delay()
 }
 
 #else
+#include <stdio.h>
+#include <gtest/gtest.h>
+
 int main () {
-	
+	EXPECT_EQ(UBRR_VALUE(9600), 103);
+	EXPECT_EQ(UBRR_VALUE(4800), 207);
 }
 #endif

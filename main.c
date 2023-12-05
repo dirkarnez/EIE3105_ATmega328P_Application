@@ -3,7 +3,7 @@
 
 #define UBRR_VALUE ((int)(((F_CPU / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL))))
 
-
+#ifdef __AVR_ATmega328P__
 #include <avr/io.h>
 
 void Timer_1_Delay();		// Prototype for Delay Function 
@@ -31,3 +31,6 @@ void Timer_1_Delay()
 	TCCR1B = 0x00;		// Stop Timer 1
 	TIFR1 = (1<<OCF1A);	// Reset OCR1A
 }
+#else
+
+#endif

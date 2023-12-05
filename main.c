@@ -14,8 +14,9 @@ int main(void)
 	PORTB = 1<<0;			// Initial LOW
     while (1)				// INF Loop
     {
-		Timer_1_Delay();	// Call 1 s Delay
-		PORTB ^= (1<<0);	// Toggle
+		//Timer_1_Delay();	// Call 1 s Delay
+		// PORTB ^= (1<<0);	// Toggle
+		PORTB = 0xFF;
     }
 }
 
@@ -31,6 +32,9 @@ void Timer_1_Delay()
 	TCCR1B = 0x00;		// Stop Timer 1
 	TIFR1 = (1<<OCF1A);	// Reset OCR1A
 }
-#else
 
+#else
+int main () {
+	
+}
 #endif

@@ -32,11 +32,24 @@ void Timer_1_Delay()
 }
 
 #else
-#include <stdio.h>
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
+using ::testing::InitGoogleTest;
 
-int main () {
+// Demonstrate some basic assertions.
+TEST(MyTest, BasicAssertions) {
+//   // Expect two strings not to be equal.
+//   EXPECT_STRNE("hello", "world");
+//   // Expect equality.
+//   EXPECT_EQ(7 * 6, 42);
 	EXPECT_EQ(UBRR_VALUE(9600), 103);
 	EXPECT_EQ(UBRR_VALUE(4800), 207);
 }
+
+
+int main(int argc, char** argv) {
+  	InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+
 #endif
+

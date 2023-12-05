@@ -80,6 +80,7 @@ jobs:
             -DGTest_DIR="%CD_LINUX%/googletest-v1.14.0-${{  matrix.compiler.name }}/lib/cmake/GTest" ^
             -B./cmake-build &&^
             cd cmake-build &&^
+            cmake --build . &&^
             ctest &&^
             echo Successful build &&^
             pause

@@ -11,6 +11,8 @@
 
 #Build Results
 *.o
+*.obj
+*.tmp
 *.d
 *.eep
 *.elf

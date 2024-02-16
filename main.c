@@ -1,13 +1,13 @@
 #define F_CPU 16000000UL
-#define __UBRR_VALUE(USART_BAUDRATE) ((int)(((F_CPU / ((double)(USART_BAUDRATE) * (double)(16UL))) - (double)(1UL))))
+#define __UBRR_VALUE(USART_BAUDRATE) ((int)  ((((F_CPU) / ((double)(16UL))) + ((double)(USART_BAUDRATE) / ((double)(2UL)))) / (double)(USART_BAUDRATE)-((double)(1UL))))
 
 
 // _Static_assert does not work with in
 #define UBRR_VALUE(USART_BAUDRATE) ({  \
-            _Static_assert(USART_BAUDRATE <= 115200, "Cannot larger than 115200"); \
-            __UBRR_VALUE(USART_BAUDRATE); \
-            \
-           })
+	_Static_assert(USART_BAUDRATE <= 115200, "Cannot larger than 115200"); \
+	__UBRR_VALUE(USART_BAUDRATE); \
+	\
+})
 
 #ifdef __AVR_ATmega328P__
 #include <avr/io.h>

@@ -1,6 +1,15 @@
 #define F_CPU 16000000UL
 #define __UBRR_VALUE(USART_BAUDRATE) ((int)  ((((F_CPU) / ((double)(16UL))) + ((double)(USART_BAUDRATE) / ((double)(2UL)))) / (double)(USART_BAUDRATE)-((double)(1UL))))
 
+/*
+UBRRL = (uint8_t)( (F_CPU + BAUD_RATE * 4L) / (BAUD_RATE * 8L) - 1 );
+
+  UBRRH = (((F_CPU/BAUD_RATE)/16)-1)>>8; 	// set baud rate
+  UBRRL = (((F_CPU/BAUD_RATE)/16)-1);
+
+https://github.com/search?q=repo%3Aarduino%2FArduinoCore-avr+UBRRL&type=code
+*/
+
 
 // _Static_assert does not work with in
 #define UBRR_VALUE(USART_BAUDRATE) ({  \

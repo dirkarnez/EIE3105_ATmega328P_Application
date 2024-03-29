@@ -2,6 +2,11 @@
 #define __UBRR_VALUE(USART_BAUDRATE) ((int)  ((((F_CPU) / ((double)(16UL))) + ((double)(USART_BAUDRATE) / ((double)(2UL)))) / (double)(USART_BAUDRATE)-((double)(1UL))))
 
 /*
+inline __attribute__((always_inline)) int calculate_UBRR() {
+	return 123;
+}
+*/
+/*
 UBRRL = (uint8_t)( (F_CPU + BAUD_RATE * 4L) / (BAUD_RATE * 8L) - 1 );
 
   UBRRH = (((F_CPU/BAUD_RATE)/16)-1)>>8; 	// set baud rate

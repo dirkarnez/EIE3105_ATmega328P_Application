@@ -11,9 +11,11 @@ UBRRL = (uint8_t)( (F_CPU + BAUD_RATE * 4L) / (BAUD_RATE * 8L) - 1 );
 
   UBRRH = (((F_CPU/BAUD_RATE)/16)-1)>>8; 	// set baud rate
   UBRRL = (((F_CPU/BAUD_RATE)/16)-1);
-
+	UBRR0L = (uint8_t)(F_CPU/(BAUD_RATE*16L)-1);
+	UBRR0H = (F_CPU/(BAUD_RATE*16L)-1) >> 8;
 https://github.com/search?q=repo%3Aarduino%2FArduinoCore-avr+UBRRL&type=code
 */
+
 
 
 // _Static_assert does not work with in
@@ -30,7 +32,7 @@ void Timer_1_Delay();		// Prototype for Delay Function
 
 int main(void)
 {
-    DDRB = 1<<0;			// PB0 as Output
+	DDRB = 1<<0;			// PB0 as Output
 	PORTB = 1<<0;			// Initial LOW
     while (1)				// INF Loop
     {

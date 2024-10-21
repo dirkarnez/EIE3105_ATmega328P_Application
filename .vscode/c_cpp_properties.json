@@ -14,8 +14,7 @@
                 "_UNICODE"
             ],
             "compilerPath": "${env:USERPROFILE}\\Downloads\\avr8\\avr8\\avr8-gnu-toolchain\\bin\\avr-gcc.exe",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
+            "cStandard": "gnu11",
             "intelliSenseMode": "windows-gcc-x64"
         }
     ],

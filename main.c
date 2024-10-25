@@ -18,6 +18,23 @@ https://github.com/search?q=repo%3Aarduino%2FArduinoCore-avr+UBRRL&type=code
 
 
 
+#define __must_be(e, msg)	(				\
+	0 * (int)sizeof(						    \
+		struct {						          \
+			_Static_assert((e), msg);			\
+			char ISO_C_forbids_a_struct_with_no_members__;	\
+		}							\
+	)								\
+)
+
+#define _a (1 * (F_CPU / 1024))
+#define AA (_a) + __must_be((_a) > 0, "")
+
+int main(void) { 
+    _Static_assert(AA < (1 << 16) && AA >= 0, "");
+}
+
+
 // _Static_assert does not work with in
 #define UBRR_VALUE(USART_BAUDRATE) ({  \
 	_Static_assert(USART_BAUDRATE <= 115200, "Cannot larger than 115200"); \

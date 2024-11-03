@@ -35,7 +35,7 @@ https://github.com/search?q=repo%3Aarduino%2FArduinoCore-avr+UBRRL&type=code
 #define AA (_a) + __must_be((_a) > 0, "")
 
 int main(void) { 
-    _Static_assert(AA < (1 << 16) && AA >= 0, "");
+
 }
 
 

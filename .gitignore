@@ -23,7 +23,7 @@
 
 #User Specific Files
 *.atsuo
-
+*.vs
 
 .vscode/settings.json
 

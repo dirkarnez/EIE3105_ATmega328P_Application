@@ -7,22 +7,7 @@
 #define NORMAL_MODE_VALUE(timer_bit, n_seconds, prescaler) ((int)(((1UL) << (timer_bit)) - ((n_seconds) * ((F_CPU) / (prescaler)))))
 #define CTC_MODE_VALUE(n_seconds, prescaler) ((int)(((n_seconds) * ((F_CPU) / (prescaler))) - (1UL)))
 
-#define __UBRR_VALUE(USART_BAUDRATE) ((int)  ((((F_CPU) / ((double)(16UL))) + ((double)(USART_BAUDRATE) / ((double)(2UL)))) / (double)(USART_BAUDRATE)-((double)(1UL))))
-
-/*
-inline __attribute__((always_inline)) int calculate_UBRR() {
-	return 123;
-}
-*/
-/*
-UBRRL = (uint8_t)( (F_CPU + BAUD_RATE * 4L) / (BAUD_RATE * 8L) - 1 );
-
-  UBRRH = (((F_CPU/BAUD_RATE)/16)-1)>>8; 	// set baud rate
-  UBRRL = (((F_CPU/BAUD_RATE)/16)-1);
-	UBRR0L = (uint8_t)(F_CPU/(BAUD_RATE*16L)-1);
-	UBRR0H = (F_CPU/(BAUD_RATE*16L)-1) >> 8;
-https://github.com/search?q=repo%3Aarduino%2FArduinoCore-avr+UBRRL&type=code
-*/
+#define UBRR_VALUE(UART_BAUDRATE) ((unsigned char)(((F_CPU)/((UART_BAUDRATE) * (16UL)))-((double)(1UL))))
 
 #include <avr/io.h>
 

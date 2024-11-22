@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${env:USERPROFILE}/Downloads/Atmel.ATmega_DFP.2.1.506/include/**",
-                "${env:USERPROFILE}/Downloads/avr8/avr8/avr8-gnu-toolchain/avr/include/**"
+                "${env:USERPROFILE}/Downloads/avr8/avr8/avr8-gnu-toolchain/avr/include/**",
+                "${env:USERPROFILE}/Downloads/avr8/avr8/avr8-gnu-toolchain/lib/gcc/avr/5.4.0/include/**"
             ],
             "defines": [
                 "__AVR_ATmega328P__",
@@ -14,7 +15,8 @@
                 "_UNICODE"
             ],
             "compilerPath": "${env:USERPROFILE}\\Downloads\\avr8\\avr8\\avr8-gnu-toolchain\\bin\\avr-gcc.exe",
-            "cStandard": "gnu11",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
             "intelliSenseMode": "windows-gcc-x64"
         }
     ],

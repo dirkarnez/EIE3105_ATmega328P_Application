@@ -28,3 +28,6 @@ EIE3105_ATmega328P_Application
 - [ibrhmkrt/MicroballisticHedefMermiAlgilama: Embedded Systems, C , Avr-C](https://github.com/ibrhmkrt/MicroballisticHedefMermiAlgilama)
 - [aleksa012po/C_Timer0_With_ISR: Simple program written in ANSI C for arduino, I use Timer1 with ISR](https://github.com/aleksa012po/C_Timer0_With_ISR)
 - [aleksa012po/C_Arduino_Electronic_Piano_Keyboard: Arduino Electronic Piano Keyboard written in ANSI C, not finished, idea is to use one input analog pin, and 8 buttons with some resistors, ideally for ATinny or some ESP](https://github.com/aleksa012po/C_Arduino_Electronic_Piano_Keyboard)
+
+
+<!-- Security scan triggered at 2026-09-15 09:42:41 -->
